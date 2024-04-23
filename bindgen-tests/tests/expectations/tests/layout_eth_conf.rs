@@ -192,99 +192,135 @@ impl Default for rte_eth_rxmode {
 impl rte_eth_rxmode {
     #[inline]
     pub fn header_split(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_header_split(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn hw_ip_checksum(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_hw_ip_checksum(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(1usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn hw_vlan_filter(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_hw_vlan_filter(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(2usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn hw_vlan_strip(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(3usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(3usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_hw_vlan_strip(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(3usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn hw_vlan_extend(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(4usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_hw_vlan_extend(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(4usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn jumbo_frame(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(5usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(5usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_jumbo_frame(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(5usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn hw_strip_crc(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(6usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(6usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_hw_strip_crc(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(6usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn enable_scatter(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(7usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(7usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_enable_scatter(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(7usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn enable_lro(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(8usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_enable_lro(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(8usize, 1u8, val as u64)
         }
@@ -307,6 +343,7 @@ impl rte_eth_rxmode {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let header_split: u16 = unsafe {
                         ::std::mem::transmute(header_split)
                     };
@@ -318,6 +355,7 @@ impl rte_eth_rxmode {
                 1usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_ip_checksum: u16 = unsafe {
                         ::std::mem::transmute(hw_ip_checksum)
                     };
@@ -329,6 +367,7 @@ impl rte_eth_rxmode {
                 2usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_vlan_filter: u16 = unsafe {
                         ::std::mem::transmute(hw_vlan_filter)
                     };
@@ -340,6 +379,7 @@ impl rte_eth_rxmode {
                 3usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_vlan_strip: u16 = unsafe {
                         ::std::mem::transmute(hw_vlan_strip)
                     };
@@ -351,6 +391,7 @@ impl rte_eth_rxmode {
                 4usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_vlan_extend: u16 = unsafe {
                         ::std::mem::transmute(hw_vlan_extend)
                     };
@@ -362,6 +403,7 @@ impl rte_eth_rxmode {
                 5usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let jumbo_frame: u16 = unsafe { ::std::mem::transmute(jumbo_frame) };
                     jumbo_frame as u64
                 },
@@ -371,6 +413,7 @@ impl rte_eth_rxmode {
                 6usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_strip_crc: u16 = unsafe {
                         ::std::mem::transmute(hw_strip_crc)
                     };
@@ -382,6 +425,7 @@ impl rte_eth_rxmode {
                 7usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let enable_scatter: u16 = unsafe {
                         ::std::mem::transmute(enable_scatter)
                     };
@@ -393,6 +437,7 @@ impl rte_eth_rxmode {
                 8usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let enable_lro: u16 = unsafe { ::std::mem::transmute(enable_lro) };
                     enable_lro as u64
                 },
@@ -462,33 +507,45 @@ impl Default for rte_eth_txmode {
 impl rte_eth_txmode {
     #[inline]
     pub fn hw_vlan_reject_tagged(&self) -> u8 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_hw_vlan_reject_tagged(&mut self, val: u8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn hw_vlan_reject_untagged(&self) -> u8 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_hw_vlan_reject_untagged(&mut self, val: u8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(1usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn hw_vlan_insert_pvid(&self) -> u8 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_hw_vlan_insert_pvid(&mut self, val: u8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(2usize, 1u8, val as u64)
         }
@@ -505,6 +562,7 @@ impl rte_eth_txmode {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_vlan_reject_tagged: u8 = unsafe {
                         ::std::mem::transmute(hw_vlan_reject_tagged)
                     };
@@ -516,6 +574,7 @@ impl rte_eth_txmode {
                 1usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_vlan_reject_untagged: u8 = unsafe {
                         ::std::mem::transmute(hw_vlan_reject_untagged)
                     };
@@ -527,6 +586,7 @@ impl rte_eth_txmode {
                 2usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let hw_vlan_insert_pvid: u8 = unsafe {
                         ::std::mem::transmute(hw_vlan_insert_pvid)
                     };

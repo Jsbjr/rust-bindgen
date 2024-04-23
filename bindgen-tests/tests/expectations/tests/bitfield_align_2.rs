@@ -114,22 +114,30 @@ impl Default for TaggedPtr {
 impl TaggedPtr {
     #[inline]
     pub fn tag(&self) -> MyEnum {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 2u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 2u8) as u32)
+        }
     }
     #[inline]
     pub fn set_tag(&mut self, val: MyEnum) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 2u8, val as u64)
         }
     }
     #[inline]
     pub fn ptr(&self) -> ::std::os::raw::c_long {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(2usize, 62u8) as u64) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(2usize, 62u8) as u64)
+        }
     }
     #[inline]
     pub fn set_ptr(&mut self, val: ::std::os::raw::c_long) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u64 = ::std::mem::transmute(val);
             self._bitfield_1.set(2usize, 62u8, val as u64)
         }
@@ -145,6 +153,7 @@ impl TaggedPtr {
                 0usize,
                 2u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let tag: u32 = unsafe { ::std::mem::transmute(tag) };
                     tag as u64
                 },
@@ -154,6 +163,7 @@ impl TaggedPtr {
                 2usize,
                 62u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let ptr: u64 = unsafe { ::std::mem::transmute(ptr) };
                     ptr as u64
                 },

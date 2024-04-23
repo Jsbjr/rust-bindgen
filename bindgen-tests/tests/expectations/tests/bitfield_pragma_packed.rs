@@ -96,55 +96,75 @@ const _: () = {
 impl Struct {
     #[inline]
     pub fn a(&self) -> ::std::os::raw::c_uchar {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_a(&mut self, val: ::std::os::raw::c_uchar) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn b(&self) -> ::std::os::raw::c_uchar {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_b(&mut self, val: ::std::os::raw::c_uchar) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(1usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn c(&self) -> ::std::os::raw::c_uchar {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(2usize, 6u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(2usize, 6u8) as u8)
+        }
     }
     #[inline]
     pub fn set_c(&mut self, val: ::std::os::raw::c_uchar) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(2usize, 6u8, val as u64)
         }
     }
     #[inline]
     pub fn d(&self) -> ::std::os::raw::c_ushort {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 16u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(8usize, 16u8) as u16)
+        }
     }
     #[inline]
     pub fn set_d(&mut self, val: ::std::os::raw::c_ushort) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(8usize, 16u8, val as u64)
         }
     }
     #[inline]
     pub fn e(&self) -> ::std::os::raw::c_uchar {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(24usize, 8u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(24usize, 8u8) as u8)
+        }
     }
     #[inline]
     pub fn set_e(&mut self, val: ::std::os::raw::c_uchar) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(24usize, 8u8, val as u64)
         }
@@ -163,6 +183,7 @@ impl Struct {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u8 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },
@@ -172,6 +193,7 @@ impl Struct {
                 1usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b: u8 = unsafe { ::std::mem::transmute(b) };
                     b as u64
                 },
@@ -181,6 +203,7 @@ impl Struct {
                 2usize,
                 6u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let c: u8 = unsafe { ::std::mem::transmute(c) };
                     c as u64
                 },
@@ -190,6 +213,7 @@ impl Struct {
                 8usize,
                 16u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let d: u16 = unsafe { ::std::mem::transmute(d) };
                     d as u64
                 },
@@ -199,6 +223,7 @@ impl Struct {
                 24usize,
                 8u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let e: u8 = unsafe { ::std::mem::transmute(e) };
                     e as u64
                 },
@@ -219,22 +244,30 @@ const _: () = {
 impl Inner {
     #[inline]
     pub fn a(&self) -> ::std::os::raw::c_ushort {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 16u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 16u8) as u16)
+        }
     }
     #[inline]
     pub fn set_a(&mut self, val: ::std::os::raw::c_ushort) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 16u8, val as u64)
         }
     }
     #[inline]
     pub fn b(&self) -> ::std::os::raw::c_ushort {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(16usize, 16u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(16usize, 16u8) as u16)
+        }
     }
     #[inline]
     pub fn set_b(&mut self, val: ::std::os::raw::c_ushort) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(16usize, 16u8, val as u64)
         }
@@ -250,6 +283,7 @@ impl Inner {
                 0usize,
                 16u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u16 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },
@@ -259,6 +293,7 @@ impl Inner {
                 16usize,
                 16u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b: u16 = unsafe { ::std::mem::transmute(b) };
                     b as u64
                 },

@@ -104,22 +104,30 @@ const _: () = {
 impl foo__bindgen_ty_1 {
     #[inline]
     pub fn b(&self) -> ::std::os::raw::c_int {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 7u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 7u8) as u32)
+        }
     }
     #[inline]
     pub fn set_b(&mut self, val: ::std::os::raw::c_int) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 7u8, val as u64)
         }
     }
     #[inline]
     pub fn c(&self) -> ::std::os::raw::c_int {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(7usize, 25u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(7usize, 25u8) as u32)
+        }
     }
     #[inline]
     pub fn set_c(&mut self, val: ::std::os::raw::c_int) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(7usize, 25u8, val as u64)
         }
@@ -135,6 +143,7 @@ impl foo__bindgen_ty_1 {
                 0usize,
                 7u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b: u32 = unsafe { ::std::mem::transmute(b) };
                     b as u64
                 },
@@ -144,6 +153,7 @@ impl foo__bindgen_ty_1 {
                 7usize,
                 25u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let c: u32 = unsafe { ::std::mem::transmute(c) };
                     c as u64
                 },

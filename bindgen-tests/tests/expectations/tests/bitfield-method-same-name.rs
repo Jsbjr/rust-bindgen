@@ -108,11 +108,15 @@ extern "C" {
 impl Foo {
     #[inline]
     pub fn type__bindgen_bitfield(&self) -> ::std::os::raw::c_char {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 3u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 3u8) as u8)
+        }
     }
     #[inline]
     pub fn set_type__bindgen_bitfield(&mut self, val: ::std::os::raw::c_char) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 3u8, val as u64)
         }
@@ -127,6 +131,7 @@ impl Foo {
                 0usize,
                 3u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let type__bindgen_bitfield: u8 = unsafe {
                         ::std::mem::transmute(type__bindgen_bitfield)
                     };

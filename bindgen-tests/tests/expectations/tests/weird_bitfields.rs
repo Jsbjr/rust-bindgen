@@ -163,22 +163,30 @@ impl Default for Weird {
 impl Weird {
     #[inline]
     pub fn bitTest(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 16u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 16u8) as u32)
+        }
     }
     #[inline]
     pub fn set_bitTest(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 16u8, val as u64)
         }
     }
     #[inline]
     pub fn bitTest2(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(16usize, 15u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(16usize, 15u8) as u32)
+        }
     }
     #[inline]
     pub fn set_bitTest2(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(16usize, 15u8, val as u64)
         }
@@ -194,6 +202,7 @@ impl Weird {
                 0usize,
                 16u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let bitTest: u32 = unsafe { ::std::mem::transmute(bitTest) };
                     bitTest as u64
                 },
@@ -203,6 +212,7 @@ impl Weird {
                 16usize,
                 15u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let bitTest2: u32 = unsafe { ::std::mem::transmute(bitTest2) };
                     bitTest2 as u64
                 },
@@ -211,55 +221,75 @@ impl Weird {
     }
     #[inline]
     pub fn mFillOpacitySource(&self) -> nsStyleSVGOpacitySource {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(0usize, 3u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(0usize, 3u8) as u32)
+        }
     }
     #[inline]
     pub fn set_mFillOpacitySource(&mut self, val: nsStyleSVGOpacitySource) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_2.set(0usize, 3u8, val as u64)
         }
     }
     #[inline]
     pub fn mStrokeOpacitySource(&self) -> nsStyleSVGOpacitySource {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(3usize, 3u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(3usize, 3u8) as u32)
+        }
     }
     #[inline]
     pub fn set_mStrokeOpacitySource(&mut self, val: nsStyleSVGOpacitySource) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_2.set(3usize, 3u8, val as u64)
         }
     }
     #[inline]
     pub fn mStrokeDasharrayFromObject(&self) -> bool {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(6usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(6usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_mStrokeDasharrayFromObject(&mut self, val: bool) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_2.set(6usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn mStrokeDashoffsetFromObject(&self) -> bool {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(7usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(7usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_mStrokeDashoffsetFromObject(&mut self, val: bool) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_2.set(7usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn mStrokeWidthFromObject(&self) -> bool {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(8usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(8usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_mStrokeWidthFromObject(&mut self, val: bool) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_2.set(8usize, 1u8, val as u64)
         }
@@ -278,6 +308,7 @@ impl Weird {
                 0usize,
                 3u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let mFillOpacitySource: u32 = unsafe {
                         ::std::mem::transmute(mFillOpacitySource)
                     };
@@ -289,6 +320,7 @@ impl Weird {
                 3usize,
                 3u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let mStrokeOpacitySource: u32 = unsafe {
                         ::std::mem::transmute(mStrokeOpacitySource)
                     };
@@ -300,6 +332,7 @@ impl Weird {
                 6usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let mStrokeDasharrayFromObject: u8 = unsafe {
                         ::std::mem::transmute(mStrokeDasharrayFromObject)
                     };
@@ -311,6 +344,7 @@ impl Weird {
                 7usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let mStrokeDashoffsetFromObject: u8 = unsafe {
                         ::std::mem::transmute(mStrokeDashoffsetFromObject)
                     };
@@ -322,6 +356,7 @@ impl Weird {
                 8usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let mStrokeWidthFromObject: u8 = unsafe {
                         ::std::mem::transmute(mStrokeWidthFromObject)
                     };

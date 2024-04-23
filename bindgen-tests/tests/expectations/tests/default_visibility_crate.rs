@@ -98,33 +98,45 @@ pub struct Color {
 impl Color {
     #[inline]
     pub(crate) fn r(&self) -> ::std::os::raw::c_char {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub(crate) fn set_r(&mut self, val: ::std::os::raw::c_char) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub(crate) fn g(&self) -> ::std::os::raw::c_char {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub(crate) fn set_g(&mut self, val: ::std::os::raw::c_char) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(1usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub(crate) fn b(&self) -> ::std::os::raw::c_char {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub(crate) fn set_b(&mut self, val: ::std::os::raw::c_char) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(2usize, 1u8, val as u64)
         }
@@ -141,6 +153,7 @@ impl Color {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let r: u8 = unsafe { ::std::mem::transmute(r) };
                     r as u64
                 },
@@ -150,6 +163,7 @@ impl Color {
                 1usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let g: u8 = unsafe { ::std::mem::transmute(g) };
                     g as u64
                 },
@@ -159,6 +173,7 @@ impl Color {
                 2usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b: u8 = unsafe { ::std::mem::transmute(b) };
                     b as u64
                 },

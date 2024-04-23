@@ -98,22 +98,30 @@ const _: () = {
 impl Test {
     #[inline]
     pub fn x(&self) -> u64 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 56u8) as u64) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 56u8) as u64)
+        }
     }
     #[inline]
     pub fn set_x(&mut self, val: u64) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u64 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 56u8, val as u64)
         }
     }
     #[inline]
     pub fn y(&self) -> u64 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(56usize, 8u8) as u64) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(56usize, 8u8) as u64)
+        }
     }
     #[inline]
     pub fn set_y(&mut self, val: u64) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u64 = ::std::mem::transmute(val);
             self._bitfield_1.set(56usize, 8u8, val as u64)
         }
@@ -126,6 +134,7 @@ impl Test {
                 0usize,
                 56u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let x: u64 = unsafe { ::std::mem::transmute(x) };
                     x as u64
                 },
@@ -135,6 +144,7 @@ impl Test {
                 56usize,
                 8u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let y: u64 = unsafe { ::std::mem::transmute(y) };
                     y as u64
                 },

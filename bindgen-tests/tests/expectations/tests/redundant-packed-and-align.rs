@@ -128,22 +128,30 @@ const _: () = {
 impl redundant_packed_bitfield {
     #[inline]
     pub fn b0(&self) -> u8 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_b0(&mut self, val: u8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn b1(&self) -> u8 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_b1(&mut self, val: u8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(1usize, 1u8, val as u64)
         }
@@ -156,6 +164,7 @@ impl redundant_packed_bitfield {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b0: u8 = unsafe { ::std::mem::transmute(b0) };
                     b0 as u64
                 },
@@ -165,6 +174,7 @@ impl redundant_packed_bitfield {
                 1usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b1: u8 = unsafe { ::std::mem::transmute(b1) };
                     b1 as u64
                 },

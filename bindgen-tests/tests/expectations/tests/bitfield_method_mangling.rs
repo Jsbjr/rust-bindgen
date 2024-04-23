@@ -100,22 +100,30 @@ const _: () = {
 impl mach_msg_type_descriptor_t {
     #[inline]
     pub fn pad3(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 24u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 24u8) as u32)
+        }
     }
     #[inline]
     pub fn set_pad3(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 24u8, val as u64)
         }
     }
     #[inline]
     pub fn type_(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(24usize, 8u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(24usize, 8u8) as u32)
+        }
     }
     #[inline]
     pub fn set_type(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(24usize, 8u8, val as u64)
         }
@@ -131,6 +139,7 @@ impl mach_msg_type_descriptor_t {
                 0usize,
                 24u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let pad3: u32 = unsafe { ::std::mem::transmute(pad3) };
                     pad3 as u64
                 },
@@ -140,6 +149,7 @@ impl mach_msg_type_descriptor_t {
                 24usize,
                 8u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let type_: u32 = unsafe { ::std::mem::transmute(type_) };
                     type_ as u64
                 },

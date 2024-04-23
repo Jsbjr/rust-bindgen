@@ -97,11 +97,15 @@ const _: () = {
 impl HasBigBitfield {
     #[inline]
     pub fn x(&self) -> i128 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 128u8) as u128) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 128u8) as u128)
+        }
     }
     #[inline]
     pub fn set_x(&mut self, val: i128) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u128 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 128u8, val as u64)
         }
@@ -114,6 +118,7 @@ impl HasBigBitfield {
                 0usize,
                 128u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let x: u128 = unsafe { ::std::mem::transmute(x) };
                     x as u64
                 },
@@ -139,22 +144,30 @@ const _: () = {
 impl HasTwoBigBitfields {
     #[inline]
     pub fn x(&self) -> i128 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 80u8) as u128) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 80u8) as u128)
+        }
     }
     #[inline]
     pub fn set_x(&mut self, val: i128) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u128 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 80u8, val as u64)
         }
     }
     #[inline]
     pub fn y(&self) -> i128 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(80usize, 48u8) as u128) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(80usize, 48u8) as u128)
+        }
     }
     #[inline]
     pub fn set_y(&mut self, val: i128) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u128 = ::std::mem::transmute(val);
             self._bitfield_1.set(80usize, 48u8, val as u64)
         }
@@ -167,6 +180,7 @@ impl HasTwoBigBitfields {
                 0usize,
                 80u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let x: u128 = unsafe { ::std::mem::transmute(x) };
                     x as u64
                 },
@@ -176,6 +190,7 @@ impl HasTwoBigBitfields {
                 80usize,
                 48u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let y: u128 = unsafe { ::std::mem::transmute(y) };
                     y as u64
                 },

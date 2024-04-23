@@ -97,44 +97,60 @@ const _: () = {
 impl Foo {
     #[inline]
     pub fn m_bitfield(&self) -> ::std::os::raw::c_ulong {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 64u8) as u64) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 64u8) as u64)
+        }
     }
     #[inline]
     pub fn set_m_bitfield(&mut self, val: ::std::os::raw::c_ulong) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u64 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 64u8, val as u64)
         }
     }
     #[inline]
     pub fn m_bar(&self) -> ::std::os::raw::c_ulong {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(64usize, 64u8) as u64) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(64usize, 64u8) as u64)
+        }
     }
     #[inline]
     pub fn set_m_bar(&mut self, val: ::std::os::raw::c_ulong) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u64 = ::std::mem::transmute(val);
             self._bitfield_1.set(64usize, 64u8, val as u64)
         }
     }
     #[inline]
     pub fn foo(&self) -> ::std::os::raw::c_ulong {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(128usize, 1u8) as u64) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(128usize, 1u8) as u64)
+        }
     }
     #[inline]
     pub fn set_foo(&mut self, val: ::std::os::raw::c_ulong) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u64 = ::std::mem::transmute(val);
             self._bitfield_1.set(128usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn bar(&self) -> ::std::os::raw::c_ulong {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(192usize, 64u8) as u64) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(192usize, 64u8) as u64)
+        }
     }
     #[inline]
     pub fn set_bar(&mut self, val: ::std::os::raw::c_ulong) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u64 = ::std::mem::transmute(val);
             self._bitfield_1.set(192usize, 64u8, val as u64)
         }
@@ -152,6 +168,7 @@ impl Foo {
                 0usize,
                 64u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let m_bitfield: u64 = unsafe { ::std::mem::transmute(m_bitfield) };
                     m_bitfield as u64
                 },
@@ -161,6 +178,7 @@ impl Foo {
                 64usize,
                 64u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let m_bar: u64 = unsafe { ::std::mem::transmute(m_bar) };
                     m_bar as u64
                 },
@@ -170,6 +188,7 @@ impl Foo {
                 128usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let foo: u64 = unsafe { ::std::mem::transmute(foo) };
                     foo as u64
                 },
@@ -179,6 +198,7 @@ impl Foo {
                 192usize,
                 64u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let bar: u64 = unsafe { ::std::mem::transmute(bar) };
                     bar as u64
                 },

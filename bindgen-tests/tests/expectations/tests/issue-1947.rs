@@ -106,44 +106,60 @@ const _: () = {
 impl V56AMDY {
     #[inline]
     pub fn MADZ(&self) -> U16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 10u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 10u8) as u16)
+        }
     }
     #[inline]
     pub fn set_MADZ(&mut self, val: U16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 10u8, val as u64)
         }
     }
     #[inline]
     pub fn MAI0(&self) -> U16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(10usize, 2u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(10usize, 2u8) as u16)
+        }
     }
     #[inline]
     pub fn set_MAI0(&mut self, val: U16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(10usize, 2u8, val as u64)
         }
     }
     #[inline]
     pub fn MAI1(&self) -> U16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(12usize, 2u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(12usize, 2u8) as u16)
+        }
     }
     #[inline]
     pub fn set_MAI1(&mut self, val: U16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(12usize, 2u8, val as u64)
         }
     }
     #[inline]
     pub fn MAI2(&self) -> U16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(14usize, 2u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(14usize, 2u8) as u16)
+        }
     }
     #[inline]
     pub fn set_MAI2(&mut self, val: U16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(14usize, 2u8, val as u64)
         }
@@ -161,6 +177,7 @@ impl V56AMDY {
                 0usize,
                 10u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MADZ: u16 = unsafe { ::std::mem::transmute(MADZ) };
                     MADZ as u64
                 },
@@ -170,6 +187,7 @@ impl V56AMDY {
                 10usize,
                 2u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MAI0: u16 = unsafe { ::std::mem::transmute(MAI0) };
                     MAI0 as u64
                 },
@@ -179,6 +197,7 @@ impl V56AMDY {
                 12usize,
                 2u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MAI1: u16 = unsafe { ::std::mem::transmute(MAI1) };
                     MAI1 as u64
                 },
@@ -188,6 +207,7 @@ impl V56AMDY {
                 14usize,
                 2u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MAI2: u16 = unsafe { ::std::mem::transmute(MAI2) };
                     MAI2 as u64
                 },
@@ -196,66 +216,90 @@ impl V56AMDY {
     }
     #[inline]
     pub fn MATH(&self) -> U16 {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(0usize, 10u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(0usize, 10u8) as u16)
+        }
     }
     #[inline]
     pub fn set_MATH(&mut self, val: U16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_2.set(0usize, 10u8, val as u64)
         }
     }
     #[inline]
     pub fn MATE(&self) -> U16 {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(10usize, 4u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(10usize, 4u8) as u16)
+        }
     }
     #[inline]
     pub fn set_MATE(&mut self, val: U16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_2.set(10usize, 4u8, val as u64)
         }
     }
     #[inline]
     pub fn MATW(&self) -> U16 {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(14usize, 2u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(14usize, 2u8) as u16)
+        }
     }
     #[inline]
     pub fn set_MATW(&mut self, val: U16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_2.set(14usize, 2u8, val as u64)
         }
     }
     #[inline]
     pub fn MASW(&self) -> U8 {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(16usize, 4u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(16usize, 4u8) as u8)
+        }
     }
     #[inline]
     pub fn set_MASW(&mut self, val: U8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_2.set(16usize, 4u8, val as u64)
         }
     }
     #[inline]
     pub fn MABW(&self) -> U8 {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(20usize, 3u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(20usize, 3u8) as u8)
+        }
     }
     #[inline]
     pub fn set_MABW(&mut self, val: U8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_2.set(20usize, 3u8, val as u64)
         }
     }
     #[inline]
     pub fn MAXN(&self) -> U8 {
-        unsafe { ::std::mem::transmute(self._bitfield_2.get(23usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_2.get(23usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_MAXN(&mut self, val: U8) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_2.set(23usize, 1u8, val as u64)
         }
@@ -275,6 +319,7 @@ impl V56AMDY {
                 0usize,
                 10u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MATH: u16 = unsafe { ::std::mem::transmute(MATH) };
                     MATH as u64
                 },
@@ -284,6 +329,7 @@ impl V56AMDY {
                 10usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MATE: u16 = unsafe { ::std::mem::transmute(MATE) };
                     MATE as u64
                 },
@@ -293,6 +339,7 @@ impl V56AMDY {
                 14usize,
                 2u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MATW: u16 = unsafe { ::std::mem::transmute(MATW) };
                     MATW as u64
                 },
@@ -302,6 +349,7 @@ impl V56AMDY {
                 16usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MASW: u8 = unsafe { ::std::mem::transmute(MASW) };
                     MASW as u64
                 },
@@ -311,6 +359,7 @@ impl V56AMDY {
                 20usize,
                 3u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MABW: u8 = unsafe { ::std::mem::transmute(MABW) };
                     MABW as u64
                 },
@@ -320,6 +369,7 @@ impl V56AMDY {
                 23usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let MAXN: u8 = unsafe { ::std::mem::transmute(MAXN) };
                     MAXN as u64
                 },

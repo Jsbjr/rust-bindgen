@@ -98,11 +98,15 @@ const _: () = {
 impl my_struct1 {
     #[inline]
     fn a(&self) -> ::std::os::raw::c_int {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32)
+        }
     }
     #[inline]
     fn set_a(&mut self, val: ::std::os::raw::c_int) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
@@ -115,6 +119,7 @@ impl my_struct1 {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u32 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },
@@ -137,11 +142,15 @@ const _: () = {
 impl my_struct2 {
     #[inline]
     pub fn a(&self) -> ::std::os::raw::c_int {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u32)
+        }
     }
     #[inline]
     pub fn set_a(&mut self, val: ::std::os::raw::c_int) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
@@ -156,6 +165,7 @@ impl my_struct2 {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u32 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },

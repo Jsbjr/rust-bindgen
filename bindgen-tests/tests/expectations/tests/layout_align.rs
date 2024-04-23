@@ -175,33 +175,45 @@ const _: () = {
 impl rte_eth_link {
     #[inline]
     pub fn link_duplex(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_link_duplex(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn link_autoneg(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(1usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_link_autoneg(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(1usize, 1u8, val as u64)
         }
     }
     #[inline]
     pub fn link_status(&self) -> u16 {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(2usize, 1u8) as u16)
+        }
     }
     #[inline]
     pub fn set_link_status(&mut self, val: u16) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(2usize, 1u8, val as u64)
         }
@@ -218,6 +230,7 @@ impl rte_eth_link {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let link_duplex: u16 = unsafe { ::std::mem::transmute(link_duplex) };
                     link_duplex as u64
                 },
@@ -227,6 +240,7 @@ impl rte_eth_link {
                 1usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let link_autoneg: u16 = unsafe {
                         ::std::mem::transmute(link_autoneg)
                     };
@@ -238,6 +252,7 @@ impl rte_eth_link {
                 2usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let link_status: u16 = unsafe { ::std::mem::transmute(link_status) };
                     link_status as u64
                 },

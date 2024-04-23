@@ -137,11 +137,15 @@ impl Default for foo {
 impl foo {
     #[inline]
     pub fn a(&self) -> ::std::os::raw::c_char {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 1u8) as u8)
+        }
     }
     #[inline]
     pub fn set_a(&mut self, val: ::std::os::raw::c_char) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 1u8, val as u64)
         }
@@ -156,6 +160,7 @@ impl foo {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u8 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },

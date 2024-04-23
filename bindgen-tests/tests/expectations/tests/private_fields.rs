@@ -112,22 +112,30 @@ const _: () = {
 impl PrivateBitFields {
     #[inline]
     fn a(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32)
+        }
     }
     #[inline]
     fn set_a(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 4u8, val as u64)
         }
     }
     #[inline]
     fn b(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32)
+        }
     }
     #[inline]
     fn set_b(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(4usize, 4u8, val as u64)
         }
@@ -143,6 +151,7 @@ impl PrivateBitFields {
                 0usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u32 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },
@@ -152,6 +161,7 @@ impl PrivateBitFields {
                 4usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b: u32 = unsafe { ::std::mem::transmute(b) };
                     b as u64
                 },
@@ -174,22 +184,30 @@ const _: () = {
 impl PublicBitFields {
     #[inline]
     pub fn a(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32)
+        }
     }
     #[inline]
     pub fn set_a(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 4u8, val as u64)
         }
     }
     #[inline]
     pub fn b(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32)
+        }
     }
     #[inline]
     pub fn set_b(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(4usize, 4u8, val as u64)
         }
@@ -205,6 +223,7 @@ impl PublicBitFields {
                 0usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u32 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },
@@ -214,6 +233,7 @@ impl PublicBitFields {
                 4usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let b: u32 = unsafe { ::std::mem::transmute(b) };
                     b as u64
                 },
@@ -236,22 +256,30 @@ const _: () = {
 impl MixedBitFields {
     #[inline]
     fn a(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32)
+        }
     }
     #[inline]
     fn set_a(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 4u8, val as u64)
         }
     }
     #[inline]
     pub fn d(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32)
+        }
     }
     #[inline]
     pub fn set_d(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(4usize, 4u8, val as u64)
         }
@@ -267,6 +295,7 @@ impl MixedBitFields {
                 0usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let a: u32 = unsafe { ::std::mem::transmute(a) };
                     a as u64
                 },
@@ -276,6 +305,7 @@ impl MixedBitFields {
                 4usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let d: u32 = unsafe { ::std::mem::transmute(d) };
                     d as u64
                 },
@@ -420,33 +450,45 @@ const _: () = {
 impl Override {
     #[inline]
     pub fn bf_a(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 4u8) as u32)
+        }
     }
     #[inline]
     pub fn set_bf_a(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 4u8, val as u64)
         }
     }
     #[inline]
     fn bf_b(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(4usize, 4u8) as u32)
+        }
     }
     #[inline]
     fn set_bf_b(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(4usize, 4u8, val as u64)
         }
     }
     #[inline]
     fn private_bf_c(&self) -> ::std::os::raw::c_uint {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(8usize, 4u8) as u32) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(8usize, 4u8) as u32)
+        }
     }
     #[inline]
     fn set_private_bf_c(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.set(8usize, 4u8, val as u64)
         }
@@ -463,6 +505,7 @@ impl Override {
                 0usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let bf_a: u32 = unsafe { ::std::mem::transmute(bf_a) };
                     bf_a as u64
                 },
@@ -472,6 +515,7 @@ impl Override {
                 4usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let bf_b: u32 = unsafe { ::std::mem::transmute(bf_b) };
                     bf_b as u64
                 },
@@ -481,6 +525,7 @@ impl Override {
                 8usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let private_bf_c: u32 = unsafe {
                         ::std::mem::transmute(private_bf_c)
                     };

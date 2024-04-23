@@ -147,12 +147,14 @@ impl U4 {
     #[inline]
     pub fn derp(&self) -> ::std::os::raw::c_uint {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             ::std::mem::transmute(self._bitfield_1.as_ref().get(0usize, 1u8) as u32)
         }
     }
     #[inline]
     pub fn set_derp(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.as_mut().set(0usize, 1u8, val as u64)
         }
@@ -167,6 +169,7 @@ impl U4 {
                 0usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let derp: u32 = unsafe { ::std::mem::transmute(derp) };
                     derp as u64
                 },
@@ -195,12 +198,14 @@ impl B {
     #[inline]
     pub fn foo(&self) -> ::std::os::raw::c_uint {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             ::std::mem::transmute(self._bitfield_1.as_ref().get(0usize, 31u8) as u32)
         }
     }
     #[inline]
     pub fn set_foo(&mut self, val: ::std::os::raw::c_uint) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u32 = ::std::mem::transmute(val);
             self._bitfield_1.as_mut().set(0usize, 31u8, val as u64)
         }
@@ -208,12 +213,14 @@ impl B {
     #[inline]
     pub fn bar(&self) -> ::std::os::raw::c_uchar {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             ::std::mem::transmute(self._bitfield_1.as_ref().get(31usize, 1u8) as u8)
         }
     }
     #[inline]
     pub fn set_bar(&mut self, val: ::std::os::raw::c_uchar) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.as_mut().set(31usize, 1u8, val as u64)
         }
@@ -229,6 +236,7 @@ impl B {
                 0usize,
                 31u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let foo: u32 = unsafe { ::std::mem::transmute(foo) };
                     foo as u64
                 },
@@ -238,6 +246,7 @@ impl B {
                 31usize,
                 1u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let bar: u8 = unsafe { ::std::mem::transmute(bar) };
                     bar as u64
                 },

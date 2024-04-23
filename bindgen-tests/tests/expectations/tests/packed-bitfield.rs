@@ -96,33 +96,45 @@ const _: () = {
 impl Date {
     #[inline]
     pub fn day(&self) -> ::std::os::raw::c_uchar {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(0usize, 5u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(0usize, 5u8) as u8)
+        }
     }
     #[inline]
     pub fn set_day(&mut self, val: ::std::os::raw::c_uchar) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(0usize, 5u8, val as u64)
         }
     }
     #[inline]
     pub fn month(&self) -> ::std::os::raw::c_uchar {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(5usize, 4u8) as u8) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(5usize, 4u8) as u8)
+        }
     }
     #[inline]
     pub fn set_month(&mut self, val: ::std::os::raw::c_uchar) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u8 = ::std::mem::transmute(val);
             self._bitfield_1.set(5usize, 4u8, val as u64)
         }
     }
     #[inline]
     pub fn year(&self) -> ::std::os::raw::c_short {
-        unsafe { ::std::mem::transmute(self._bitfield_1.get(9usize, 15u8) as u16) }
+        unsafe {
+            #[allow(clippy::useless_transmute)]
+            ::std::mem::transmute(self._bitfield_1.get(9usize, 15u8) as u16)
+        }
     }
     #[inline]
     pub fn set_year(&mut self, val: ::std::os::raw::c_short) {
         unsafe {
+            #[allow(clippy::useless_transmute)]
             let val: u16 = ::std::mem::transmute(val);
             self._bitfield_1.set(9usize, 15u8, val as u64)
         }
@@ -139,6 +151,7 @@ impl Date {
                 0usize,
                 5u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let day: u8 = unsafe { ::std::mem::transmute(day) };
                     day as u64
                 },
@@ -148,6 +161,7 @@ impl Date {
                 5usize,
                 4u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let month: u8 = unsafe { ::std::mem::transmute(month) };
                     month as u64
                 },
@@ -157,6 +171,7 @@ impl Date {
                 9usize,
                 15u8,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let year: u16 = unsafe { ::std::mem::transmute(year) };
                     year as u64
                 },

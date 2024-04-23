@@ -1624,6 +1624,7 @@ impl Bitfield {
                 #offset,
                 #width,
                 {
+                    #[allow(clippy::useless_transmute)]
                     let #param_name: #bitfield_int_ty = unsafe {
                         ::#prefix::mem::transmute(#param_name)
                     };
@@ -1923,6 +1924,7 @@ impl<'a> FieldCodegen<'a> for Bitfield {
                 #[inline]
                 #access_spec fn #getter_name(&self) -> #bitfield_ty {
                     unsafe {
+                        #[allow(clippy::useless_transmute)]
                         ::#prefix::mem::transmute(
                             self.#unit_field_ident.as_ref().get(#offset, #width)
                                 as #bitfield_int_ty
@@ -1933,6 +1935,7 @@ impl<'a> FieldCodegen<'a> for Bitfield {
                 #[inline]
                 #access_spec fn #setter_name(&mut self, val: #bitfield_ty) {
                     unsafe {
+                        #[allow(clippy::useless_transmute)]
                         let val: #bitfield_int_ty = ::#prefix::mem::transmute(val);
                         self.#unit_field_ident.as_mut().set(
                             #offset,
@@ -1947,6 +1950,7 @@ impl<'a> FieldCodegen<'a> for Bitfield {
                 #[inline]
                 #access_spec fn #getter_name(&self) -> #bitfield_ty {
                     unsafe {
+                        #[allow(clippy::useless_transmute)]
                         ::#prefix::mem::transmute(
                             self.#unit_field_ident.get(#offset, #width)
                                 as #bitfield_int_ty
@@ -1957,6 +1961,7 @@ impl<'a> FieldCodegen<'a> for Bitfield {
                 #[inline]
                 #access_spec fn #setter_name(&mut self, val: #bitfield_ty) {
                     unsafe {
+                        #[allow(clippy::useless_transmute)]
                         let val: #bitfield_int_ty = ::#prefix::mem::transmute(val);
                         self.#unit_field_ident.set(
                             #offset,
@@ -5238,6 +5243,7 @@ pub(crate) mod utils {
             pub struct __BindgenUnionField<T>(::#prefix::marker::PhantomData<T>);
         };
 
+        #[allow(clippy::useless_transmute)]
         let transmute =
             ctx.wrap_unsafe_ops(quote!(::#prefix::mem::transmute(self)));
 
